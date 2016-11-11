@@ -1,5 +1,8 @@
 # NAME
 
+[![Build Status](https://travis-ci.org/binary-com/perl-WWW-OneAll.svg?branch=master)](https://travis-ci.org/binary-com/perl-WWW-OneAll)
+[![codecov](https://codecov.io/gh/binary-com/perl-WWW-OneAll/branch/master/graph/badge.svg)](https://codecov.io/gh/binary-com/perl-WWW-OneAll)
+
 WWW::OneAll - OneAll API
 
 # SYNOPSIS
