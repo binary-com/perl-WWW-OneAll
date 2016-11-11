@@ -11,6 +11,6 @@ before_install:
     - "cpanm -qn Devel::Cover::Report::Codecov"
     - "cpanm -n --installdeps ."
 script:
-    perl Makefile.PL && make test
+    perl Build.PL && ./Build test
 after_success:
     cover -test -report codecov
