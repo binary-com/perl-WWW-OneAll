@@ -9,9 +9,9 @@ use Mojo::Util qw(b64_encode);
 our $VERSION = '0.01';
 
 use vars qw/$errstr/;
-sub errstr { $errstr }
+sub errstr { return $errstr }
 
-sub new {
+sub new { ## no critic (ArgUnpacking)
     my $class = shift;
     my %args  = @_ % 2 ? %{$_[0]} : @_;
 
@@ -90,7 +90,7 @@ WWW::OneAll - OneAll API
 =head1 SYNOPSIS
 
     use WWW::OneAll;
-
+    my $connection_token;
     my $oneall = WWW::OneAll->new(
         subdomain   => 'your_subdomain',
         public_key  => 'pubkey12-629b-4020-83fe-38af46e27b06',
@@ -129,6 +129,8 @@ Connection API L<http://docs.oneall.com/api/resources/connections/>
     my $res = $oneall->request('GET', "/connections");
 
 native method to create your own API request.
+
+=head2 errstr
 
 =head1 AUTHOR
 
