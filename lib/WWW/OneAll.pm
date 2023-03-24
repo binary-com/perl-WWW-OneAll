@@ -56,11 +56,16 @@ sub request {
 
     $errstr = '';    # reset
 
+    # Format the query params if exist
+    my $ref_url_params = delete $params{query_params};
+    my $query_params = "?";
+    $query_params = $query_params.join("&", @$ref_url_params) if $ref_url_params;
+
     my $ua = $self->__ua;
     my $header = {Authorization => 'Basic ' . b64_encode($self->{public_key} . ':' . $self->{private_key}, '')};
     $header->{'Content-Type'} = 'application/json' if %params;
     my @extra = %params ? (json => \%params) : ();
-    my $tx = $ua->build_tx($method => $self->{endpoint} . $url . '.json' => $header => @extra);
+    my $tx = $ua->build_tx($method => $self->{endpoint} . $url . '.json'.$query_params => $header => @extra);
     $tx->req->headers->accept('application/json');
 
     $tx = $ua->start($tx);
