@@ -1,14 +1,11 @@
 # NAME
 
-[![Build Status](https://travis-ci.org/binary-com/perl-WWW-OneAll.svg?branch=master)](https://travis-ci.org/binary-com/perl-WWW-OneAll)
-[![codecov](https://codecov.io/gh/binary-com/perl-WWW-OneAll/branch/master/graph/badge.svg)](https://codecov.io/gh/binary-com/perl-WWW-OneAll)
-
 WWW::OneAll - OneAll API
 
 # SYNOPSIS
 
     use WWW::OneAll;
-
+    my $connection_token;
     my $oneall = WWW::OneAll->new(
         subdomain   => 'your_subdomain',
         public_key  => 'pubkey12-629b-4020-83fe-38af46e27b06',
@@ -41,6 +38,8 @@ Connection API [http://docs.oneall.com/api/resources/connections/](http://docs.o
     my $res = $oneall->request('GET', "/connections");
 
 native method to create your own API request.
+
+## errstr
 
 # AUTHOR
 
