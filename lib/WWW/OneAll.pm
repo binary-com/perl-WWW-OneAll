@@ -6,7 +6,7 @@ use Carp qw/croak/;
 use Mojo::UserAgent;
 use Mojo::Util qw(b64_encode);
 
-our $VERSION = '0.02';
+our $VERSION = '0.04';
 
 use vars qw/$errstr/;
 sub errstr { return $errstr }
